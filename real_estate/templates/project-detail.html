@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load app_tags %}
+
+{% block content %}
+
+<ol class="breadcrumb">
+    <li>
+      <a href="{% url 'index' %}">Home</a>
+    </li>
+    <li>
+      <a href="{% url 'projects_list' %}">Dự án</a>
+    </li>
+    <li>
+      <a href="eco-garden.html" class="active">{{project_name}}</a>
+    </li>
+</ol>
+
+<div id="main-content">
+ 
+
+<div class="container">
+ 
+  <div class="row">
+  <div id="item-detail" class="col-md-9">
+    <h2>Eco Garden</h2>
+    <hr>
+      <article>
+        <div id="intro">
+          <h3>Tổng quan dự án</h3>
+          <p>Proident ut laboris eiusmod non in cillum incididunt in mollit consectetur nisi enim aliquip. Consectetur in fugiat sint ut in incididunt ut fugiat dolore aliquip commodo dolore adipisicing enim ut sit in. Incididunt eu aliquip eu minim dolore sit aliquip ut. Officia voluptate ut laborum esse incididunt ad ut exercitation adipisicing laboris deserunt ut dolor voluptate eiusmod.</p>
+          <p>Nisi minim ullamco officia dolore est do pariatur anim esse labore. Ex ex dolor fugiat eu officia dolore elit pariatur consectetur. Ullamco cupidatat laboris incididunt proident esse minim deserunt consectetur ea ut exercitation proident aliqua in mollit fugiat. Dolor pariatur pariatur eiusmod enim nisi ullamco in aute culpa ad officia nulla consectetur sunt minim reprehenderit reprehenderit.</p>
+          <p>Lorem ipsum ut exercitation reprehenderit sunt est veniam ut aliquip sed voluptate eu occaecat quis sint aliqua incididunt ad in. Sed officia adipisicing voluptate ullamco eiusmod commodo dolor pariatur enim.</p>
+          <p>Esse in laboris dolore esse reprehenderit qui in laborum mollit enim ea ullamco nostrud veniam. Dolore incididunt sed dolore incididunt qui quis pariatur eiusmod est anim deserunt non. Tempor ad sint tempor enim in laborum aute consectetur adipisicing est dolore deserunt consectetur laboris pariatur velit.</p>
+
+          <div class="box-slide">
+            <div class="slide-for">
+              <div class="item">
+                <a class="fancybox" rel="group" href="{% static 'images/002/Logo.jpg' %}">
+                  <img src="{% static 'images/002/Logo.jpg' %}" alt="">
+                </a>
+              </div>
+
+              <div class="item">
+                <a class="fancybox" rel="group" href="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-01.jpg' %}">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-01.jpg' %}" alt="">
+                </a>
+              </div>
+
+              <div class="item">
+                <a class="fancybox" rel="group" href="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-02.jpg'%}">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-02.jpg' %}" alt="">
+                </a>
+              </div>
+
+              <div class="item">
+                <a class="fancybox" rel="group" href="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-03.jpg'%}">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-03.jpg' %}" alt="">
+                </a>
+              </div>
+
+            </div>
+
+            <div class="slide-nav">
+              <div class="item">
+                <span style="background: url('{% static 'images/002/Logo.jpg' %}')">
+                  <img src="{% static 'images/002/Logo.jpg' %}" alt="">
+                </span>
+              </div>
+
+              <div class="item">
+                <span style="background: url('{% static 'images/002/Eco-garden-dat-xanh-quang-binh-01.jpg' %}')">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-01.jpg' %}" alt="">
+                </span>
+              </div>
+
+              <div class="item">
+                <span style="background: url('{% static 'images/002/Eco-garden-dat-xanh-quang-binh-02.jpg' %}')">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-02.jpg' %}" alt="">
+                </span>
+              </div>
+
+              <div class="item">
+                <span style="background: url('{% static 'images/002/Eco-garden-dat-xanh-quang-binh-03.jpg' %}')">
+                  <img src="{% static 'images/002/Eco-garden-dat-xanh-quang-binh-03.jpg' %}" alt="">
+                </span>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div id="location">
+          {% for section in sections %}
+           <h3> {{ section.title }} </h3>
+           <h3> {% slugify_tag section.title %} </h3>
+           {% endfor %}
+            <h3>Vị Trí</h3>
+            <p>Nostrud consequat labore qui mollit sint in elit ullamco veniam ut amet ut ut excepteur aliquip. Veniam aliquip adipisicing dolor est nulla id ullamco ad ut esse ut pariatur enim consectetur. Sunt velit ea in consectetur culpa officia dolore non quis cillum in in ut dolor ut mollit irure veniam. Do consectetur dolore exercitation magna officia aliqua esse labore adipisicing. Non reprehenderit anim nisi minim nulla aliqua magna ut in excepteur non ad pariatur culpa in dolor adipisicing consequat. Lorem ipsum in dolore ullamco est consectetur incididunt reprehenderit elit dolore et sunt do ad reprehenderit et quis quis.</p>
+          </div>
+          
+    </article>
+  </div>
+  <div id="side-bar" class="col-md-3 hidden-xs">
+    <div class="sidebar__inner">
+      <ul class="hidden-xs">
+        <li class="active"><a href="#intro" onclick="showItem('intro')">Giới Thiệu</a></li>
+        <li><a href="#location" onclick="showItem('location')">Vị Trí</a></li>
+        <li><a href="#block" onclick="showItem('block')">Block</a></li>
+        <li><a href="#utils" onclick="showItem('utils')">Tiện Ích</a></li>
+        <li><a href="#legal-project" onclick="showItem('legal-project')">Pháp Lý Dự Án</a></li>
+        <li><a href="#trans" onclick="showItem('trans')">Quy Trình Giao Dịch</a></li>
+        <li><a href="#price" onclick="showItem('price')">Bảng giá sản phẩm</a></li>
+        <li><a href="#subs" onclick="showItem('subs')">Đăng Ký Theo Dõi</a></li>
+      </ul>
+    </div>
+  </div>
+   
+  </div>
+</div>
+</div> <!--End main content-->
+{% endblock content %}
